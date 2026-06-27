@@ -38,6 +38,8 @@ Trime User can use trime-gukwan theme for the dedicated layout.
 
 ## 輸入 Keymap
 
+<img src="pic\key.jpg"/>
+
 星號爲古諺文。Asterisk stands for Old Hangul.
 
 ### 母音 Vowels
