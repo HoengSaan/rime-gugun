@@ -1,0 +1,149 @@
+[
+  [
+    {
+      "w": 1.5
+    },
+    "Tab",
+    {
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ]
+    },
+    "Q\n\n(ng)\n\n\n\n\n\n\n\nㅇ",
+    {
+      "t": "#000000\n\n\n\n\n\n\n\n\n\n#ff0000"
+    },
+    "W\n\n\n\n\n\n\n\n\n\nㅜ",
+    {
+      "t": "#000000"
+    },
+    "E\n\n\n\n\n\n\n\n\n\nㅓ",
+    "R\n\n\n\n\n\n\n\n\n\nㅿ",
+    "T\n\n\n\n\n\n\n\n\n\nㅌ",
+    "Y\n\n\n\n\n\n\n\n\n\nㅡ",
+    "U\n\n\n\n\n\n\n\n\n\nㅜ",
+    "I\n\n\n\n\n\n\n\n\n\nㅣ",
+    "O\n\n\n\n\n\n\n\n\n\nㅗ",
+    "P\n\n\n\n\n\n\n\n\n\nㅍ",
+    {
+      "a": 7
+    },
+    "",
+    "",
+    {
+      "w": 1.5
+    },
+    ""
+  ],
+  [
+    {
+      "a": 4,
+      "w": 1.75
+    },
+    "Caps Lock",
+    "A\n\n\n\n\n\n\n\n\n\nㅏ",
+    "S\n\n\n\n\n\n\n\n\n\nㅅ",
+    "D\n\n\n\n\n\n\n\n\n\nㄷ",
+    {
+      "f": 3
+    },
+    "F\n\n\n\n\n\n\n\n\nJamo\n字母",
+    "G\n\n\n\n\n\n\n\n\n\nㄱ",
+    "H\n\n\n\n\n\n\n\n\n\nㅎ",
+    {
+      "t": "#000000\n\n\n\n\n\n\n\n\n\n#ff0000"
+    },
+    "J\n\n\n\n\n\n\n\n\n\nㅣ",
+    {
+      "t": "#000000"
+    },
+    "K\n\n\n\n\n\n\n\n\n\nㅋ",
+    "L\n\n\n\n\n\n\n\n\n\nㄹ",
+    {
+      "f": 3
+    },
+    ";\n\n\n\n\n\n\n\n\nHanja\n漢字",
+    {
+      "a": 7
+    },
+    "",
+    {
+      "a": 4,
+      "w": 2.25
+    },
+    "Enter"
+  ],
+  [
+    {
+      "w": 2.25
+    },
+    "Shift",
+    "Z\n\n\n\n\n\n\n\n\n\nㅈ",
+    {
+      "f": 3
+    },
+    "X\n\n\n\n\n\n\n\n\nTone\n聲調",
+    "C\n\n\n\n\n\n\n\n\n\nㅊ",
+    "V\n\n\n\n\n\n\n\n\n\nᆞ",
+    "B\n\n\n\n\n\n\n\n\n\nㅂ",
+    "N\n\n\n\n\n\n\n\n\n\nㄴ",
+    "M\n\n\n\n\n\n\n\n\n\nㅁ",
+    {
+      "a": 7
+    },
+    "",
+    "",
+    "",
+    {
+      "a": 4,
+      "w": 2.75
+    },
+    "Shift"
+  ],
+  [
+    {
+      "w": 1.25
+    },
+    "Ctrl",
+    {
+      "w": 1.25
+    },
+    "Win",
+    {
+      "w": 1.25
+    },
+    "Alt",
+    {
+      "a": 7,
+      "w": 6.25
+    },
+    "",
+    {
+      "a": 4,
+      "w": 1.25
+    },
+    "Alt",
+    {
+      "w": 1.25
+    },
+    "Win",
+    {
+      "w": 1.25
+    },
+    "Menu",
+    {
+      "w": 1.25
+    },
+    "Ctrl"
+  ]
+]

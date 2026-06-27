@@ -21,11 +21,11 @@ This work is licensed under a
 - 菊韻同文主題：[trime-gukwan: 同文輸入法36鍵鍵盤主題 Trime IME 36 Keys Keyboard Theme](https://github.com/HoengSaan/trime-gukwan/)
 - 菊韻和語【停止維護】：[rime-kikwin: 菊韻日本語入力法 基於中州韻 Japanese IME (RIME Scheme)](https://github.com/HoengSaan/rime-kikwin)
 
-## 簡介 Introduction 紹介
+## 簡介 Introduction
 
-基於[oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files)，此爲[RIME | 中州韻輸入法引擎](https://rime.im/)諺文音碼方案。拼音基於粵拼以符合本人習慣。
+此爲[RIME | 中州韻輸入法引擎](https://rime.im/)諺文方案，基於[oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files)。造輪目的是因爲我對其他諺文羅馬字方案不滿，創造基準爲一個部件（非諺文字母）對應一個拉丁字母。如果撇除十個中古漢語用古諺文，本方案可以被視爲一種形碼輸入法，抑或是一種音形輸入法。
 
-Based on [oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files), a Hangul input method based on RIME. The romanization is based on Jyutping to suit my personal preference.
+A RIME Hangul input method based on [oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files). The purpose of reinventing the wheel is that I am dissatisfied with existing romanizations for Hangul. The basic principle of the wheel is that each component (not equivalent to Jamo) corresponds to one Latin letter. If the 10 archaic Hanguls for Middle Chinese are excluded, this scheme can be referred to as a shape-based input method like Cangjie.
 
 同文用戶可使用菊韻同文主題，有適配佈局。
 
@@ -40,58 +40,57 @@ Trime User can use trime-gukwan theme for the dedicated layout.
 
 <img src="pic\key.jpg"/>
 
-星號爲古諺文。Asterisk stands for Old Hangul.
+- 後綴「;」出漢字｜Subfix ";" for Chinese Characters ( Hanja )
+- 後綴「f」出諺文字母｜ Subfix "f" for Hangul Jamo
+- 後綴「ff」出諺文兼容字母｜Subfix "ff" for Hangul Compatibility Jamo
+- 前綴「=」倉頡反查｜Prefix "=" for Cangjie reverse look-up
+- 「x」爲去聲；「xx」爲上聲｜"x" for departing tone; "xx" for rising tone.
+
+此方案中，二重母音被視爲兩個部件；「ㆁ」被視作「ㅇ」，但仍可用`ng`輸入。In this scheme, diphthongs are treated as two components; "ㆁ" is regarded as "ㅇ", but still can be input using `ng`.
+
+- ㅑ：ㅣ＋ㅏ＝i+a=ia
+- ㅒ：ㅣ+ㅏ+ㅣ=i+a+i=iai
+- ㅃ：ㅂ＋ㅂ=b+b=bb
+
+由於[諺文音節](https://www.unicode.org/charts/PDF/UAC00.pdf)無古諺文，須利用諺文字母輸入。Since [Hangul Syllables](https://www.unicode.org/charts/PDF/UAC00.pdf) do not contain Old Hangul, it is necessary to input using Hangul Jamo.
+
+- ㆆ：ㅡ＋ㅇ＝yq+f
+- ㅸ：ㅂ＋ㅇ＝bq+f
+- ᄊᆡ〮：ㅆ＋ᆞ＋ㅣ＋U302E=(ss+f)+(vi+f)+x 
+
+星號爲古諺文。粗體爲部件。Asterisk stands for Old Hangul. Hash stands for component.
 
 ### 母音 Vowels
 
 | 陰 Negative | 陽 Positive | 中 Neutral |
 |----          |----         |----         |
-|ㅡ y    | ㆍ v*    | ㅣ i（j） |
-|ㅓ e   	      |ㅏ a 	        |          |
-|ㅜ u（w/wu）  |ㅗ o  |  |
-|**陰介** |**陽介** | |
+|ㅡ y#    | ㆍ v* | ㅣ i#（j） |
+|ㅓ e#   	      |ㅏ a# 	        |          |
+|ㅜ u#（w/wu）  |ㅗ o#  |  |
 |ㅕ ie |ㅑ ia | |
 |ㅠ iu |ㅛ io | |
-|**陰雙** |**陽雙** |**中雙** |
 |ㅐ ai |ㅔ e |ㅢ yi |
 |ㅒ iai |ㅖ iei | |
 |ㅝ ue | ㅘ oa（ua） |ㅟ ui |
 |ㅞ uei | ㅙ oai      |ㅚ oi |
 
-
 ### 子音 Consonants
+
+星號爲古諺文。Asterisk stands for Old Hangul.
+
 | 全清 | 半清 | 全濁 | 半濁 |
 |----         |----       |----       |:---         |
 | **Slack** | **Aspirate** | **Tenuis/Voiced*** | **Other** |
-|ㄱ g	       |ㅋ k        |ㄲ gg        |ㆁ ng        |
-|ㄷ d	       |ㅌ t	       |ㄸ dd  |ㄴ n  |
-|ㅂ b	       |ㅍ p  |ㅃ bb        |ㅁ m        |
-|ㅅ s	       | ㅎ h |ㅆ ss        | ㅇ q      |
-|ㅈ z  |ㅊ c        | ㅉ zz | ㄹ l |
+|ㄱ g#	       |ㅋ k#        |ㄲ gg        |ㆁ ng*        |
+|ㄷ d#	       |ㅌ t#	       |ㄸ dd  |ㄴ n#  |
+|ㅂ b#	       |ㅍ p#  |ㅃ bb        |ㅁ m#        |
+|ㅅ s#	       | ㅎ h# |ㅆ ss        | ㅇ q# |
+|ㅈ z#  |ㅊ c#        | ㅉ zz | ㄹ l# |
 | | | ㅿ r*              |  |
 |ᄼ sh* | | ᄽ ssh* |  |
 |ᄾ sr* | | ᄿ ssr* |  |
 |ᅎ zh* |ᅔ ch* | ᅏ zzh* |  |
 |ᅐ zr* |ᅕ cr* | ᅑ zzr* |  |
-
-### 其他 Other
-
-| 上聲 Rising Tone | 去聲 Departing Tone |
-| ---------------- | ------------------- |
-| 〯（U+302F）xx     | 〮（U+302E）x         |
-
-- 後綴「;」出漢字 Subfix ";" for Chinese Characters ( Hanja )
-- 後綴「f」出諺文部件 Subfix "f" for Hangul Jamo
-- 後綴「ff」出諺文兼容部件 Subfix "ff" for Hangul Compatibility Jamo
-- 前綴「=」倉頡反查 Prefix "=" for Cangjie reverse look-up
-
-由於[諺文音節](https://www.unicode.org/charts/PDF/UAC00.pdf)無古諺文，須以部件輸入。如下 
-
-Since [Hangul Syllables](https://www.unicode.org/charts/PDF/UAC00.pdf) do not support Old Hangul, you need to input Old Hangul by Jamo. Examples below:
-
-- ㆆ：ㅡ＋ㅇ＝yq 
-- ㅸ：ㅂ＋ㅇ＝bq
-- ᄊᆡ〮：ssfvifx 
 
 ## 安裝 Installation
 
