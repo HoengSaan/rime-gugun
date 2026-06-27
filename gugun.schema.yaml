@@ -1,0 +1,198 @@
+# Rime schema settings
+# encoding: utf-8
+#
+# 此爲菊韻諺文輸入法方案文件
+# 瞭解如何使用菊韻請閱覽readme文件，詳細請至本方案github頁：
+# https://github.com/HoengSaan/rime-gugun
+# This is a schema file for Gukwan Hangul Input Method.
+# Learn how to use Gugun in the readme file, available on the project's github page.
+schema:
+  schema_id: gugun
+  name: 菊韻諺文
+  version: "v1.0"
+  author:
+    - 『洋蔥』
+    - Hoengsaan
+  description: |
+    菊韻諺文
+  dependencies:
+    - cangjie5
+
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ "韓文", "英文" ]
+  - name: full_shape
+    reset: 0
+    states: [ "半形", "全形" ]
+  - name: ascii_punct
+    reset: 0
+    states: [ "。，", "．，" ]
+  - name: kr_1m
+    reset: 1
+    states: [ "展開", "單選" ]
+
+engine:
+  filters:
+    - lua_filter@kr_hnc_1m_filter
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+#    - fluency_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    # - table_translator@custom_phrase
+    - reverse_lookup_translator
+    - script_translator
+
+kr_hnc_1m_filter:
+  tags: [ abc ]
+
+menu:
+  alternative_select_keys: "1234567890"
+  page_size: 10
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;/"
+  # alphabet: "abcdefghijklmnopqrstuvwxyz" #
+  initials: "abcdefghijklmnopqrstuvwxyz"
+  delimiter: "'"  #";"
+  algebra:
+    - derive/^\|$/ /  #
+    - xform/tsh/ch/
+    - xform/tsrh/cr/
+    - xform/tsr/ZR/
+    - xform/ts/ZH/
+    - xform/dzr/ZZR/
+    - xform/dz/ZZH/
+    - xform/z(h|r)/ss$1/
+    - xform/z/r/
+    - xform/ZZR/zzr/
+    - xform/ZZH/zzh/
+    - xform/ZH/zh/
+    - xform/ZR/zr/
+    - xform/j/z/
+    - xform/^x/q/
+    - xform/(.+)x/$1q/
+    - xform/w/v/ 
+    - derive/q/ng/
+    - xform/y([aueo])/i$1/
+    - derive/i/j/
+    - derive/u/w/
+    - xform/X/x/
+    - abbrev/@//
+     - 'xlit|@|/|'
+    #- derive|;|v| #
+    # - xform|;|v| #
+
+
+translator:
+  dictionary: gugun
+  # prism: hangeul_hnc
+  # enable_charset_filter: false
+  enable_completion: false
+  enable_user_dict: true
+  disable_user_dict_for_patterns:
+    - ^[a-z]+[/]?[/abcdefghijklmnopqrstuwxyz]$
+  preedit_format:
+    - xform|[/][/]|‹ʜᴊ›|
+    - xform|[/]|‹ʜᴄᴊ›|
+    - xform/;/‹漢›/  #
+    - xform/'/ /  #
+
+# custom_phrase:
+#   dictionary: ""
+#   user_dict: hangeul_hnc_phrase
+#   db_class: stabledb #tabledb
+#   enable_completion: false
+#   enable_sentence: false
+#   initial_quality: 1
+
+reverse_lookup:
+  dictionary: cangjie5
+  # enable_charset_filter: false
+  # enable_encoder: false
+  # encode_commit_history: false
+  # enable_sentence: false
+  enable_completion: false
+  # sentence_over_completion: false
+  enable_user_dict: true
+  prefix: "="
+  suffix: "'"
+  tips: 〔漢字反查〕
+  preedit_format:
+    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
+  comment_format:
+    - "xlit|abcdefghijklmnopqrstuvwxyz;|ABCDEFGHIJKLMNOPQRSTUVWXYZV|"
+    - xform/V/‹ᴠ›/
+
+punctuator:
+  import_preset: symbols-gukwan
+
+key_binder:
+  import_preset: default
+  bindings:
+### 避 RIME 原設定鍵位衝突 ###
+    - {accept: comma, send: comma, when: has_menu}
+    - {accept: comma, send: comma, when: paging}
+    - {accept: period, send: period, when: has_menu}
+    - {accept: period, send: period, when: paging}
+    - {accept: minus, send: minus, when: has_menu}
+    - {accept: minus, send: minus, when: paging}
+    - {accept: equal, send: equal, when: has_menu}
+    - {accept: equal, send: equal, when: paging}
+### 切分移位 ###
+    - {accept: Up, send: KP_Left, when: composing} #左移一個注音
+    - {accept: Up, send: Up, when: paging} #修正上條目出現的bug
+##
+    - {accept: Right, send: Shift+Right, when: composing} #右移一整個字
+    - {accept: Shift+Right, send: Right, when: composing} #右移一個注音
+    - {accept: Shift+Left, send: KP_Left, when: composing} #左移一個注音
+######################
+    - {accept: Left, send: Page_Up, when: paging}
+    - {accept: Right, send: Page_Down, when: paging}
+######################
+    - {accept: Tab, send: Shift+Left, when: paging} #Shift+Right #composing
+    - {accept: Shift+space, send: Page_Down, when: has_menu} #選字時可用「Shift」+「空白鍵」翻頁。 #send: Right #send: Down
+    - {accept: Shift+Tab, send: Page_Up, when: paging} #選字時可用「Shift」+「tab」翻頁。
+######################
+    - {accept: space, send: Return, when: paging}
+    # - {accept: Return, send: space, when: composing}
+    # - {accept: Return, send: Return, when: paging}
+######################
+## 上排切換(Mac)
+    - {accept: Control+Shift+5, toggle: kr_1m, when: always}
+## 上排切換(Win)
+    - {accept: Control+Shift+percent, toggle: kr_1m, when: always}
+## 切換樣態
+    - {accept: Control+semicolon, unset_option: kr_1m, when: always}
+## 初始樣態(Mac)
+    - {accept: Control+Shift+semicolon, set_option: kr_1m, when: always}
+## 初始樣態(Win)
+    - {accept: Control+Shift+colon, set_option: kr_1m, when: always}
+######################
+
+editor:
+  bindings:
+    Return: confirm
+    KP_Enter: confirm
+    Shift+Return: commit_raw_input
+
+recognizer:
+  patterns:
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$"
+    reverse_lookup: "=[a-z]*'?$"

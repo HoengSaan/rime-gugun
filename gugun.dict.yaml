@@ -1,0 +1,32 @@
+# Rime dictionary
+# encoding: utf-8
+# 《韓語 HNC 鍵位 字詞庫匯入頁》
+# 『洋蔥』製作
+
+# 此爲菊韻諺文輸入法方案文件
+# 瞭解如何使用菊韻諺文請閱覽readme文件，詳細請至本方案github頁：
+# https://github.com/HoengSaan/rime-gugun
+# This is a schema file for Gukwan Hangul Input Method.
+# Learn how to use Gukwan Hangul in the readme file, available on the project's github page.
+
+---
+name: gugun
+version: "v1.0"
+sort: by_weight #original
+vocabulary: essay-kr-hanja
+# use_preset_vocabulary: false
+# max_phrase_length: 7
+# min_phrase_weight: 100
+import_tables:
+  - hangeul_hnc
+  - hangeul_hnc_hanja
+...
+##### 補充標點 #####
+,	,
+.	.
+ 	|
+##################
+
+#聲調
+〯	XX
+〮	X
