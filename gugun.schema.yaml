@@ -29,13 +29,8 @@ switches:
   - name: ascii_punct
     reset: 0
     states: [ "。，", "．，" ]
-  - name: kr_1m
-    reset: 1
-    states: [ "展開", "單選" ]
 
 engine:
-  filters:
-    - lua_filter@kr_hnc_1m_filter
   processors:
     - ascii_composer
     - recognizer
@@ -66,12 +61,13 @@ menu:
   page_size: 10
 
 speller:
-  alphabet: "abcdefghijklmnopqrstuvwxyz;/"
+  alphabet: "abcdefghijklmnopqrstuvwxyz;"
   # alphabet: "abcdefghijklmnopqrstuvwxyz" #
-  initials: "abcdefghijklmnopqrstuvwxyz"
+  initials: "abcdeghijklmnopqrstuvwxyz"
   delimiter: "'"  #";"
   algebra:
     - derive/^\|$/ /  #
+    - xform/er/v/
     - xform/tsh/ch/
     - xform/tsrh/cr/
     - xform/tsr/ZR/
@@ -87,29 +83,32 @@ speller:
     - xform/j/z/
     - xform/^x/q/
     - xform/(.+)x/$1q/
-    - xform/w/v/ 
     - derive/q/ng/
     - xform/y([aueo])/i$1/
+    - xform/w/y/
     - derive/i/j/
+    - derive/oa/ua/
     - derive/u/w/
+    - derive/u/wu/
     - xform/X/x/
     - abbrev/@//
-     - 'xlit|@|/|'
-    #- derive|;|v| #
-    # - xform|;|v| #
-
+    - 'xlit|@|/|'
+    - 'xform|[/][/]|Q|'
+    - 'xform|[/]|W|'
+    - xform|Q|f|
+    - xform|W|ff|
 
 translator:
   dictionary: gugun
   # prism: hangeul_hnc
   # enable_charset_filter: false
   enable_completion: false
-  enable_user_dict: true
+  enable_user_dict: false
   disable_user_dict_for_patterns:
-    - ^[a-z]+[/]?[/abcdefghijklmnopqrstuwxyz]$
+    - ^[a-z]+[f]?[/abcdefghijklmnopqrstuwxyz]$
   preedit_format:
-    - xform|[/][/]|‹ʜᴊ›|
-    - xform|[/]|‹ʜᴄᴊ›|
+    - xform|ff|‹ʜᴄᴊ›|
+    - xform|f|‹ʜᴊ›|
     - xform/;/‹漢›/  #
     - xform/'/ /  #
 

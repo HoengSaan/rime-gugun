@@ -21,36 +21,45 @@ This work is licensed under a
 - 菊韻同文主題：[trime-gukwan: 同文輸入法36鍵鍵盤主題 Trime IME 36 Keys Keyboard Theme](https://github.com/HoengSaan/trime-gukwan/)
 - 菊韻和語【停止維護】：[rime-kikwin: 菊韻日本語入力法 基於中州韻 Japanese IME (RIME Scheme)](https://github.com/HoengSaan/rime-kikwin)
 
-### 簡介 Introduction
+## 簡介 Introduction 紹介
 
 基於[oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files)，此爲[RIME | 中州韻輸入法引擎](https://rime.im/)諺文音碼方案。拼音基於粵拼以符合本人習慣。
 
 Based on [oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files), a Hangul input method based on RIME. The romanization is based on Jyutping to suit my personal preference.
 
+同文用戶可使用菊韻同文主題，有適配佈局。
+
+Trime User can use trime-gukwan theme for the dedicated layout.
+
+### 更新 Update【v1.1】
+
+- 鍵位・拼音改進
+- 刪除腳本
+
 ## 輸入 Keymap
 
-星號爲古諺文。Asterisk stands for Old Hangul.  
+星號爲古諺文。Asterisk stands for Old Hangul.
 
 ### 母音 Vowels
 
 | 陰 Negative | 陽 Positive | 中 Neutral |
 |----          |----         |----         |
-|ㅡ v    | ㆍ er*      | ㅣ i ( j ) |
+|ㅡ y    | ㆍ v*    | ㅣ i（j） |
 |ㅓ e   	      |ㅏ a 	        |          |
-|ㅜ u ( w )  |ㅗ o  |  |
+|ㅜ u（w/wu）  |ㅗ o  |  |
 |**陰介** |**陽介** | |
 |ㅕ ie |ㅑ ia | |
 |ㅠ iu |ㅛ io | |
 |**陰雙** |**陽雙** |**中雙** |
-|ㅐ ai |ㅔ ei |ㅢ vi |
+|ㅐ ai |ㅔ e |ㅢ yi |
 |ㅒ iai |ㅖ iei | |
-|ㅝ ue | ㅞ uei      |ㅟ ui |
-|ㅘ oa |ㅙ oai |ㅚ oi |
+|ㅝ ue | ㅘ oa（ua） |ㅟ ui |
+|ㅞ uei | ㅙ oai      |ㅚ oi |
 
 
 ### 子音 Consonants
 | 全清 | 半清 | 全濁 | 半濁 |
-|----         |----       |----       |---:         |
+|----         |----       |----       |:---         |
 | **Slack** | **Aspirate** | **Tenuis/Voiced*** | **Other** |
 |ㄱ g	       |ㅋ k        |ㄲ gg        |ㆁ ng        |
 |ㄷ d	       |ㅌ t	       |ㄸ dd  |ㄴ n  |
@@ -69,18 +78,18 @@ Based on [oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rim
 | ---------------- | ------------------- |
 | 〯（U+302F）xx     | 〮（U+302E）x         |
 
-- 後綴「 ; 」出漢字 Subfix ";" for Chinese Characters ( Hanja )
-- 後綴「 / 」出諺文兼容部件 Subfix "/" for Hangul Compatibility Jamo
-- 後綴「 // 」「  」出諺文部件 Subfix "//" for Hangul Jamo
-- 前綴「 = 」倉頡反查 Prefix "=" for Cangjie reverse look-up
+- 後綴「;」出漢字 Subfix ";" for Chinese Characters ( Hanja )
+- 後綴「f」出諺文部件 Subfix "f" for Hangul Jamo
+- 後綴「ff」出諺文兼容部件 Subfix "ff" for Hangul Compatibility Jamo
+- 前綴「=」倉頡反查 Prefix "=" for Cangjie reverse look-up
 
-由於[諺文音節](https://www.unicode.org/charts/PDF/UAC00.pdf)無古諺文，須以部件輸入。如下：
+由於[諺文音節](https://www.unicode.org/charts/PDF/UAC00.pdf)無古諺文，須以部件輸入。如下 
 
-Since [Hangul Syllables](https://www.unicode.org/charts/PDF/UAC00.pdf) do not support Old Hangul, you need to input Old Hangul by Jamo. Examples below.
+Since [Hangul Syllables](https://www.unicode.org/charts/PDF/UAC00.pdf) do not support Old Hangul, you need to input Old Hangul by Jamo. Examples below:
 
-- ㆆ：ㅡ＋ㅇ＝vq 
+- ㆆ：ㅡ＋ㅇ＝yq 
 - ㅸ：ㅂ＋ㅇ＝bq
-- ᄊᆡ〮：ss//eri//x 
+- ᄊᆡ〮：ssfvifx 
 
 ## 安裝 Installation
 
