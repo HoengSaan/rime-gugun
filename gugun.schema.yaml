@@ -9,7 +9,7 @@
 schema:
   schema_id: gugun
   name: 菊韻諺文
-  version: "v1.0"
+  version: "v1.2"
   author:
     - 『洋蔥』
     - Hoengsaan
@@ -17,7 +17,6 @@ schema:
     菊韻諺文
   dependencies:
     - cangjie5
-
 
 switches:
   - name: ascii_mode
@@ -62,41 +61,42 @@ menu:
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
-  # alphabet: "abcdefghijklmnopqrstuvwxyz" #
-  initials: "abcdeghijklmnopqrstuvwxyz"
+  initials: "abcdeghijklmnopqrstuvwyz"
   delimiter: "'"  #";"
   algebra:
     - derive/^\|$/ /  #
-    - xform/er/v/
-    - xform/tsh/ch/
+    - xform/er/v/ #아래아
+    - xform/tsh/ch/ #中古漢
     - xform/tsrh/cr/
     - xform/tsr/ZR/
     - xform/ts/ZH/
     - xform/dzr/ZZR/
     - xform/dz/ZZH/
     - xform/z(h|r)/ss$1/
-    - xform/z/r/
-    - xform/ZZR/zzr/
+    - xform/z/r/ #반시옷
+    - xform/ZZR/zzr/ #中古漢
     - xform/ZZH/zzh/
     - xform/ZH/zh/
     - xform/ZR/zr/
-    - xform/j/z/
-    - xform/^x/q/
-    - xform/(.+)x/$1q/
-    - derive/q/ng/
-    - xform/y([aueo])/i$1/
-    - xform/w/y/
-    - derive/i/j/
-    - derive/oa/ua/
-    - derive/u/w/
-    - derive/u/wu/
-    - xform/X/x/
+    - xform/j/z/ #지읒
+    - xform/x/q/ #이응
+    - derive/^q// #이응省畧
+    - derive/q/ng/ #옛이응
+    - xform/y([aueo])/i$1/ #介音
+    - derive/i([aueo])/j$1/
+    - xform/w/y/ #으
+    - derive/oa/ua/ #와・왜 
+    - derive/([bcdghklmnpqrstz])u/$1wu/ #介音
+    - derive/([bcdghklmnpqrstz])u/$1w/
+    - xform/X/x/ # 聲調
+    # 轉換
     - abbrev/@//
     - 'xlit|@|/|'
     - 'xform|[/][/]|Q|'
     - 'xform|[/]|W|'
     - xform|Q|f|
     - xform|W|ff|
+    - derive/vf/v/
 
 translator:
   dictionary: gugun
@@ -105,7 +105,7 @@ translator:
   enable_completion: false
   enable_user_dict: false
   disable_user_dict_for_patterns:
-    - ^[a-z]+[f]?[/abcdefghijklmnopqrstuwxyz]$
+    - ^[a-z]+[f]?[/abcdefghijklmnopqrstuwxvyz]$
   preedit_format:
     - xform|ff|‹ʜᴄᴊ›|
     - xform|f|‹ʜᴊ›|
@@ -131,7 +131,7 @@ reverse_lookup:
   enable_user_dict: true
   prefix: "="
   suffix: "'"
-  tips: 〔漢字反查〕
+  tips: 〔倉頡〕
   preedit_format:
     - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
   comment_format:

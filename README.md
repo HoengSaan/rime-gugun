@@ -23,20 +23,20 @@ This work is licensed under a
 
 ## 簡介 Introduction
 
-此爲[RIME | 中州韻輸入法引擎](https://rime.im/)諺文方案，基於[oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files)。造輪目的是因爲我對其他諺文羅馬字方案不滿，創造基準爲一個部件（非諺文字母）對應一個拉丁字母。如果撇除十個中古漢語用古諺文，本方案可以被視爲一種形碼輸入法，抑或是一種音形輸入法。
+此爲[RIME | 中州韻輸入法引擎](https://rime.im/)諺文方案，基於[oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files)。造輪目的是因爲我對其他諺文羅馬字方案不滿，創造基準爲一個部件（非諺文字母）對應一個拉丁字母。
 
-A RIME Hangul input method based on [oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files). The purpose of reinventing the wheel is that I am dissatisfied with existing romanizations for Hangul. The basic principle of the wheel is that each component (not equivalent to Jamo) corresponds to one Latin letter. If the 10 archaic Hanguls for Middle Chinese are excluded, this scheme can be referred to as a shape-based input method like Cangjie.
+A RIME Hangul input method based on [oniondelta/Hangul_Rime_Files](https://github.com/oniondelta/Hangul_Rime_Files). The purpose of reinventing the wheel is that I am dissatisfied with existing romanizations for Hangul. The basic principle of the wheel is that each component (not equivalent to Jamo) corresponds to one Latin letter.
 
 同文用戶可使用菊韻同文主題，有適配佈局。
 
 Trime User can use trime-gukwan theme for the dedicated layout.
 
-### 更新 Update【v1.1】
+### 更新 Update【v1.2】
 
-- 鍵位・拼音改進
-- 刪除腳本
+- 優化Spelling Algebra
+- 優化字表
 
-## 輸入 Keymap
+## 指南 Guide
 
 <img src="pic\key.jpg"/>
 
@@ -44,39 +44,48 @@ Trime User can use trime-gukwan theme for the dedicated layout.
 - 後綴「f」出諺文字母｜ Subfix "f" for Hangul Jamo
 - 後綴「ff」出諺文兼容字母｜Subfix "ff" for Hangul Compatibility Jamo
 - 前綴「=」倉頡反查｜Prefix "=" for Cangjie reverse look-up
+- 「w」「j」只可作爲介音使用｜"w" and "j" is for prenuclear guide only.
 - 「x」爲去聲；「xx」爲上聲｜"x" for departing tone; "xx" for rising tone.
 
-此方案中，二重母音被視爲兩個部件；「ㆁ」被視作「ㅇ」，但仍可用`ng`輸入。In this scheme, diphthongs are treated as two components; "ㆁ" is regarded as "ㅇ", but still can be input using `ng`.
+### 輸入 Input
 
-- ㅑ：ㅣ＋ㅏ＝i+a=ia
-- ㅒ：ㅣ+ㅏ+ㅣ=i+a+i=iai
-- ㅃ：ㅂ＋ㅂ=b+b=bb
+- 此方案中，二重母音被視爲兩個部件；In this scheme, diphthongs are treated as two components.
+  - ㅑ：ㅣ＋ㅏ＝i+a＝ia
+  - ㅒ：ㅣ+ㅏ+ㅣ＝i+a+i＝iai
+  - 뾿：ㅂ＋ㅂ+ㅣ＋ㅗ＋ㄹ＋ㅎ=(b+b)+(i+o)+(l+h)＝bbiolh
 
-由於[諺文音節](https://www.unicode.org/charts/PDF/UAC00.pdf)無古諺文，須利用諺文字母輸入。Since [Hangul Syllables](https://www.unicode.org/charts/PDF/UAC00.pdf) do not contain Old Hangul, it is necessary to input using Hangul Jamo.
+- 初聲「ㅇ」可被省畧。此功能對輸入有影響，可自行在方案文件關閉。Initial "ㅇ" can be omitted. This function affects input and can be turned off manually in the scheme file.
+  - 앜：ㅇ＋ㅏ+ㅋ＝q+a+k＝ak
 
-- ㆆ：ㅡ＋ㅇ＝yq+f
-- ㅸ：ㅂ＋ㅇ＝bq+f
-- ᄊᆡ〮：ㅆ＋ᆞ＋ㅣ＋U302E=(ss+f)+(vi+f)+x 
+- 「ㆁ」被視作「ㅇ」，但仍可用`ng`輸入。"ㆁ" is regarded as "ㅇ", but still can be input using `ng`. 
+  - 롱：ㄹ＋ㅗ+ㅇ＝l+o+q＝long
+
+- 由於[諺文音節](https://www.unicode.org/charts/PDF/UAC00.pdf)無古諺文，須利用諺文字母輸入。Since [Hangul Syllables](https://www.unicode.org/charts/PDF/UAC00.pdf) do not contain Old Hangul, it is necessary to input using Hangul Jamo.
+  - ㆆ：ㅡ＋ㅇ＝yq+f
+  - ㅸ：ㅂ＋ㅇ＝bq+f
+  - ᄊᆡ〮：ㅆ＋ᆞ＋ㅣ＋U302E=(ss+f)+(vi+f)+x
+
+### 圖 Table
 
 星號爲古諺文。粗體爲部件。Asterisk stands for Old Hangul. Hash stands for component.
 
-### 母音 Vowels
+#### 母音 Vowels
 
 | 陰 Negative | 陽 Positive | 中 Neutral |
 |----          |----         |----         |
-|ㅡ y#    | ㆍ v* | ㅣ i#（j） |
+|ㅡ y#    | ㆍ v* | ㅣ i# |
 |ㅓ e#   	      |ㅏ a# 	        |          |
-|ㅜ u#（w/wu）  |ㅗ o#  |  |
-|ㅕ ie |ㅑ ia | |
-|ㅠ iu |ㅛ io | |
-|ㅐ ai |ㅔ e |ㅢ yi |
-|ㅒ iai |ㅖ iei | |
-|ㅝ ue | ㅘ oa（ua） |ㅟ ui |
-|ㅞ uei | ㅙ oai      |ㅚ oi |
+|ㅜ u#（wu）  |ㅗ o#  |  |
+|ㅕ ie（je） |ㅑ ia（ja） | |
+|ㅠ iu（ju） |ㅛ io（jo） | |
+|ㅐ ai |ㅔ ei |ㅢ yi |
+|ㅒ iai（jai） |ㅖ iei（jei） |  |
+|ㅝ ue（we/wue） | ㅘ oa（ua/wa/wua） |ㅟ ui（wi/wui） |
+|ㅞ uei（wei/wuei） | ㅙ oai（uai/wai/wuai） |ㅚ oi |
 
-### 子音 Consonants
+#### 子音 Consonants
 
-星號爲古諺文。Asterisk stands for Old Hangul.
+十個中古漢語用古諺文不能被拆解，有專用輸入碼。There are 10 Old Hanguls for Middle Chinese cannot be decomposed, they have dedicated input codes.
 
 | 全清 | 半清 | 全濁 | 半濁 |
 |----         |----       |----       |:---         |
@@ -86,7 +95,7 @@ Trime User can use trime-gukwan theme for the dedicated layout.
 |ㅂ b#	       |ㅍ p#  |ㅃ bb        |ㅁ m#        |
 |ㅅ s#	       | ㅎ h# |ㅆ ss        | ㅇ q# |
 |ㅈ z#  |ㅊ c#        | ㅉ zz | ㄹ l# |
-| | | ㅿ r*              |  |
+| | | ㅿ r#*             |  |
 |ᄼ sh* | | ᄽ ssh* |  |
 |ᄾ sr* | | ᄿ ssr* |  |
 |ᅎ zh* |ᅔ ch* | ᅏ zzh* |  |
