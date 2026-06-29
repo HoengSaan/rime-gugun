@@ -6,35 +6,17 @@
 # 正碼：https://mynb.wordpress.com/2010/11/10/hnc-romaja-%e8%bc%b8%e5%85%a5%e6%b3%95%ef%bc%9a%e9%9f%93%e8%8b%b1%e5%b0%8d%e7%85%a7/
 # 另外寫法：https://blog.xuite.net/ban.ryu/tureduregusa/62986282
 #
-# 另外寫法全已遮屏，不要開啟，mapping 韓文詞庫會使 table.bin 很龐大，改用 speller 轉寫。
-#
-#
-# 〈 HNC 鍵位 〉
-# ===========================================================================
-# 單母音：
-# ㅣ=i  ㅡ=w  ㅏ=a  ㅜ=u  ㅓ=e  ㅗ=o  ㅑ=ya  ㅠ=yu  ㅕ=ye  ㅛ=yo
-# ---------------------------------------------------------------------------
-# 雙母音：
-# ㅐ=ai  ㅔ=ei  ㅒ=yai  ㅖ=yei  ㅘ=oa  ㅙ=oai  ㅚ=oi  ㅝ=ue  ㅞ=uei  ㅟ=ui  ㅢ=wi
-# ---------------------------------------------------------------------------
-# 單子音:
-# ㄱ=g  ㅋ=k 	 ㄴ=n  ㄷ=d  ㅌ=t  ㄹ=l  ㅂ=b  ㅍ=p  ㅁ=m  ㅅ=s  ㅈ=j  ㅊ=c  ㅇ=x  ㅎ=h
-# ---------------------------------------------------------------------------
-# 雙子音:
-# ㄲ=gg  ㄸ=dd  ㅃ=bb  ㅆ=ss  ㅉ=jj
-# ---------------------------------------------------------------------------
-# 本碼表特別編碼:
-# ㅿ=z  ㆍ=er
-# ᄼ=sh  ᄽ=zh  ᄾ=sr  ᄿ=zr  ᅎ=ts  ᅏ=dz  ᅐ=tsr  ᅑ=dzr  ᅔ=tsh  ᅕ=tsrh
-# ===========================================================================
-#
-#
 # 『洋蔥』製作
 #
-#
+# 此爲菊韻諺文輸入法方案文件
+# 瞭解如何使用菊韻請閱覽readme文件，詳細請至本方案github頁：
+# https://github.com/HoengSaan/rime-gugun
+# This is a schema file for Gukwan Hangul Input Method.
+# Learn how to use Gugun in the readme file, available on the project's github page.
+
 ---
 name: hangeul_hnc
-version: "202206"
+version: "v1.3"
 sort: by_weight
 use_preset_vocabulary: false
 ...
@@ -11588,7 +11570,7 @@ use_preset_vocabulary: false
 ᇫ	z//
 ᇬ	xg//
 ᇭ	xgg//
-ᇮ	x//
+ᇮ	xx//
 ᇯ	xk//
 ᇰ	x//
 ᇱ	xs//

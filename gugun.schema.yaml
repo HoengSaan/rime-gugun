@@ -9,7 +9,7 @@
 schema:
   schema_id: gugun
   name: 菊韻諺文
-  version: "v1.2"
+  version: "v1.2.1"
   author:
     - 『洋蔥』
     - Hoengsaan
@@ -61,7 +61,7 @@ menu:
 
 speller:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"
-  initials: "abcdeghijklmnopqrstuvwyz"
+  initials: "abcdeghijklmnopqrstuvxyz"
   delimiter: "'"  #";"
   algebra:
     - derive/^\|$/ /  #
@@ -80,22 +80,21 @@ speller:
     - xform/ZR/zr/
     - xform/j/z/ #지읒
     - xform/x/q/ #이응
-    - derive/^q// #이응省畧
+    - derive/^q(.*[^w])$/$1/ #이응省畧d
     - derive/q/ng/ #옛이응
     - xform/y([aueo])/i$1/ #介音
     - derive/i([aueo])/j$1/
     - xform/w/y/ #으
-    - derive/oa/ua/ #와・왜 
-    - derive/([bcdghklmnpqrstz])u/$1wu/ #介音
-    - derive/([bcdghklmnpqrstz])u/$1w/
+    - derive/oa/ua/ #와・왜
     - xform/X/x/ # 聲調
     # 轉換
     - abbrev/@//
     - 'xlit|@|/|'
     - 'xform|[/][/]|Q|'
     - 'xform|[/]|W|'
-    - xform|Q|f|
-    - xform|W|ff|
+    - xform|Q|f| #HJ
+    - xform|W|ff| #HCJ
+    - xform|([bcdghklmnpqrstz])fE|$1w| #終聲
     - derive/vf/v/
 
 translator:
@@ -108,6 +107,7 @@ translator:
     - ^[a-z]+[f]?[/abcdefghijklmnopqrstuwxvyz]$
   preedit_format:
     - xform|ff|‹ʜᴄᴊ›|
+    - xform|([bcdghklmnpqrstz])w|$1‹ʜᴊꜰ›|
     - xform|f|‹ʜᴊ›|
     - xform/;/‹漢›/  #
     - xform/'/ /  #

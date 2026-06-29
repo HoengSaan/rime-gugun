@@ -21,14 +21,28 @@
     },
     "Q\n\n(ng)\n\n\n\n\n\n\n\nㅇ",
     {
-      "t": "#000000\n\n\n\n\n\n\n\n\n\n#ff0000"
+      "t": "#000000\n\n\n\n\n\n\n\n\n#0000ff\n#0000FF",
+      "f2": 0
     },
-    "W\n\n\n\n\n\n\n\n\n\nㅜ",
+    "W\n\n\n\n\n\n\n\n\nFinal\n終聲",
     {
-      "t": "#000000"
+      "t": "#000000",
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ]
     },
     "E\n\n\n\n\n\n\n\n\n\nㅓ",
-    "R\n\n\n\n\n\n\n\n\n\nㅿ",
+    "R\n\n*\n\n\n\n\n\n\n\nㅿ",
     "T\n\n\n\n\n\n\n\n\n\nㅌ",
     "Y\n\n\n\n\n\n\n\n\n\nㅡ",
     "U\n\n\n\n\n\n\n\n\n\nㅜ",
@@ -41,13 +55,13 @@
     "",
     "",
     {
+      "a": 4,
       "w": 1.5
     },
-    ""
+    "Backspace"
   ],
   [
     {
-      "a": 4,
       "w": 1.75
     },
     "Caps Lock",
@@ -55,9 +69,13 @@
     "S\n\n\n\n\n\n\n\n\n\nㅅ",
     "D\n\n\n\n\n\n\n\n\n\nㄷ",
     {
+      "t": "#000000\n\n\n\n\n\n\n\n\n#0000ff\n#0000ff",
       "f": 3
     },
     "F\n\n\n\n\n\n\n\n\nJamo\n字母",
+    {
+      "t": "#000000"
+    },
     "G\n\n\n\n\n\n\n\n\n\nㄱ",
     "H\n\n\n\n\n\n\n\n\n\nㅎ",
     {
@@ -70,10 +88,12 @@
     "K\n\n\n\n\n\n\n\n\n\nㅋ",
     "L\n\n\n\n\n\n\n\n\n\nㄹ",
     {
+      "t": "#000000\n\n\n\n\n\n\n\n\n#0000ff\n#0000ff",
       "f": 3
     },
     ";\n\n\n\n\n\n\n\n\nHanja\n漢字",
     {
+      "t": "#000000",
       "a": 7
     },
     "",
@@ -90,11 +110,15 @@
     "Shift",
     "Z\n\n\n\n\n\n\n\n\n\nㅈ",
     {
+      "t": "#000000\n\n\n\n\n\n\n\n\n#0000ff\n#0000ff",
       "f": 3
     },
     "X\n\n\n\n\n\n\n\n\nTone\n聲調",
+    {
+      "t": "#000000"
+    },
     "C\n\n\n\n\n\n\n\n\n\nㅊ",
-    "V\n\n\n\n\n\n\n\n\n\nᆞ",
+    "V\n\n*\n\n\n\n\n\n\n\nᆞ",
     "B\n\n\n\n\n\n\n\n\n\nㅂ",
     "N\n\n\n\n\n\n\n\n\n\nㄴ",
     "M\n\n\n\n\n\n\n\n\n\nㅁ",
